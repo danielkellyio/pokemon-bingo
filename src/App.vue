@@ -1,14 +1,41 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <h1
+        style="
+          display: flex;
+          align-items: end;
+          justify-content: center;
+          font-size: 3rem;
+          margin: 0;
+        "
+      >
+        <img
+          src="/pokemon-logo.png"
+          alt=""
+          width="200"
+          style="margin-right: 10px"
+        />
+        Bingo
+      </h1>
     </div>
     <router-view />
   </div>
 </template>
+<script>
+export default {
+  created() {
+    this.$store.init();
+  },
+};
+</script>
 
 <style>
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
