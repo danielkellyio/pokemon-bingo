@@ -1,10 +1,11 @@
 <template>
-  <div class="admin" style="margin-top: 30px">
+  <div class="admin" style="margin: 0 auto; margin-top: 30px; max-width: 900px">
     <button @click="$store.call()">
       {{ lastCalled ? "Next Pokemon" : "Start Game" }}
     </button>
 
     <div
+      class="box"
       style="
         display: flex;
         max-width: 1200px;
@@ -20,7 +21,7 @@
           <img
             :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${lastCalled.id}.svg`"
             :alt="lastCalled.name"
-            style="height: 450px; max-width: 100%"
+            style="height: 375px; max-width: 100%"
           />
         </div>
       </div>
@@ -32,6 +33,7 @@
           overflow: auto;
           background: #eee;
           margin-left: 30px;
+          width: 300px;
         "
       >
         <input
@@ -46,7 +48,8 @@
             margin: 2px;
           "
         />
-        <ul style="width: 300px; margin: 0 auto padding: 10px;">
+        <ul style="margin: 0 auto; padding: 20px; list-style: none">
+          <li v-if="!filtered.length">No pokemon called yet</li>
           <li
             v-for="pokemon in filtered"
             :key="pokemon.id"

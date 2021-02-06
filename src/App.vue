@@ -19,7 +19,9 @@
         Bingo
       </h1>
     </div>
-    <router-view />
+    <div class="page-wrapper">
+      <router-view />
+    </div>
   </div>
 </template>
 <script>
@@ -35,6 +37,15 @@ export default {
 *::after,
 *::before {
   box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100%;
+}
+body {
+  background: url("/bg.jpg") no-repeat !important;
+  background-size: cover !important;
+  background-position: center bottom !important;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -55,5 +66,11 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.box {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 </style>

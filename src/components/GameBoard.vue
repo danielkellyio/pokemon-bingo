@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box" style="display: inline-block">
     <div
       v-for="i in dimensions[0]"
       :key="i"
@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       dimensions: [4, 4],
-      size: 180,
+      size: 160,
     };
   },
 };

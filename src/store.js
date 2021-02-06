@@ -22,9 +22,12 @@ export default {
     return state;
   },
   async init() {
+    const limit = 50;
+    const offset = 0;
     state.allPokemon = (
       await Pokedex.getPokemonsList({
-        limit: 50,
+        limit,
+        offset,
       })
     ).results;
     state.allPokemon = state.allPokemon.map((pokemon, index) => {
